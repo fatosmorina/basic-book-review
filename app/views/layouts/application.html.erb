@@ -17,7 +17,7 @@
   		</div>
   		<ul class="nav navbar-nav">
   			<% if user_signed_in? %>
-  			    <li><%= link_to "Log Out", destroy_user_session %></li>
+  			    <li><%= link_to "Log Out", destroy_user_session_path %></li>
   			<% else %>
   			    <li><%= link_to "Log In", new_user_session_path %></li>
   				<li><%= link_to "Register", new_user_registration_path %></li>
