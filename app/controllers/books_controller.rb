@@ -33,6 +33,11 @@ class BooksController < ApplicationController
 	  end
 	end
 
+	def destroy
+	  @book.destroy
+	  redirect_to root_path
+	end
+
 	private
 
 	def book_parameters
