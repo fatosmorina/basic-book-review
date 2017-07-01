@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
 
 	before_action :find_book, only: [:show, :edit, :update, :destroy]
+	before_action :get_categories, only: [:show, :edit, :new]
 
 	def show
 	end
@@ -11,7 +12,6 @@ class BooksController < ApplicationController
 
 	def new
 	  @book = current_user.books.build
-	  @categories = Category.all.map { |category| [category.name, category.id] }	
 	end
 
 	def create
@@ -48,6 +48,10 @@ class BooksController < ApplicationController
 
 	def find_book
 		@book = Book.find(params[:id])
+	end
+
+	def get_categories
+		@categories = Category.all.map{ |c| [c.name, c.id] }
 	end
 
 end
