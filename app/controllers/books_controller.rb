@@ -10,11 +10,11 @@ class BooksController < ApplicationController
 	end
 
 	def new
-	  @book = Book.new	
+	  @book = current_user.books.build	
 	end
 
 	def create
-	  @book = Book.new(book_parameters)	
+	  @book = current_user.books.build(book_parameters)	
 	  if @book.save
 	  	redirect_to 'index'
 	  else
