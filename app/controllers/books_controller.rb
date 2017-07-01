@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
 
 	before_action :find_book, only: [:show, :edit, :update, :destroy]
-	before_action :get_categories, only: [:show, :edit, :new]
+	before_action :set_categories, only: [:edit, :new]
 
 	def show
 	end
@@ -50,8 +50,8 @@ class BooksController < ApplicationController
 		@book = Book.find(params[:id])
 	end
 
-	def get_categories
-		@categories = Category.all.map{ |c| [c.name, c.id] }
+	def set_categories
+		@categories = Category.all.map{ |categories| [categories.name, categories.id] }
 	end
 
 end
