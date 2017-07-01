@@ -10,7 +10,8 @@ class BooksController < ApplicationController
 	end
 
 	def new
-	  @book = current_user.books.build	
+	  @book = current_user.books.build
+	  @categories = Category.all.map { |category| category.name, category.id }	
 	end
 
 	def create
