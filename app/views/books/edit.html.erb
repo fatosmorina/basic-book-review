@@ -2,6 +2,7 @@
 
 <%= simple_form_for @book, :html => { :multipart => true } do |form| %>
 	<%= form.select :category_id,@categories %>
+	<%= form.file_field :book_cover %>
 	<%= form.input :title, label: "Title" %>
 	<%= form.input :description %>
 	<%= form.input :author %>
