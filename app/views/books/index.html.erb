@@ -1,3 +1,4 @@
+<%= image_tag @book.book_cover.url(:book_show), class: "book-show" %>
 <h1 class="current-category"><%= params[:category] %></h1>
 
 <% if @books.count == 0 %>
