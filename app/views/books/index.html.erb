@@ -3,10 +3,7 @@
 <% if @books.count == 0 %>
  		<h2> This category does not have any book added yet. Be the first to add a new one! </h2>
  <% else %>
-		
+	<% @books.each do |book| %>
+		<h2><%= link_to book.title, book_path(book) %></h2>
+	<% end %>
  <% end %>
-
-<% @books.each do |book| %>
-	<h2><%= link_to book.title, book_path(book) %></h2>
-<% end %>
-
