@@ -1,7 +1,15 @@
-<h2><%= @book.title %></h2>
-<h3><%= @book.author %></h3>
-<p><%= @book.description %></p>
-<p><%= @book.category.name %></p>
+<div>
+	
+	<div class="col-md-4">
+		<%= image_tag @book.book_cover.url(:book_show), class: "book-show" %>
+	</div>
+	<h2><%= @book.title %></h2>
+	<h3><%= @book.author %></h3>
+	<p><%= @book.description %></p>
+	<p><%= @book.category.name %></p>
+
+</div>
+
 
 <%= link_to "Back", root_path %>
 
