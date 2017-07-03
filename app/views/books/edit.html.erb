@@ -1,6 +1,6 @@
 <h1>Edit book</h1>
 
-<%= simple_form_for @book do |form| %>
+<%= simple_form_for @book, :html => { :multipart => true } do |form| %>
 	<%= form.select :category_id, collection: @categories %>
 	<%= form.input :title, label: "Title" %>
 	<%= form.input :description %>
