@@ -10,7 +10,7 @@
 
 		<div class="col-md-3">
 			<a href="/books/<%= book.id %>">
-				<%= image_tag book.book_cover.url(:book_index) %>
+				<%= image_tag book.book_cover.url(:book_index), class: "thumbnail" %>
 			</a>
 		</div>
 		<% end %>
