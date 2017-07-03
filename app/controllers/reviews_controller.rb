@@ -5,7 +5,7 @@ class ReviewsController < ApplicationController
 	end
 
 	def create
-		
+     
 	end
 
 
@@ -13,5 +13,9 @@ class ReviewsController < ApplicationController
 
 	def review_parameters
 	  params.require(:review).permit(:rating, :comment)		
+	end
+
+	def get_book
+	  @book = Book.find(params[:book_id])	
 	end
 end
