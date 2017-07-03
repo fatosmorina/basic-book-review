@@ -1,12 +1,23 @@
-<div>
-	
+<div class="row">
+
 	<div class="col-md-4">
-		<%= image_tag @book.book_cover.url(:book_show), class: "book-show" %>
+
+		<%= image_tag @book.book_img.url(:book_show), class: "book-show" %>
+
 	</div>
-	<h2><%= @book.title %></h2>
-	<h3><%= @book.author %></h3>
-	<p><%= @book.description %></p>
-	<p><%= @book.category.name %></p>
+
+	<div class="col-md-8">
+
+		<div class="book-info">
+
+			<h2 class="book-title"><%= @book.title %></h2>
+			<h3 class="book-author"><span>From</span> <%= @book.author %></h3>
+			<span class="number-of-reviews">Based on <%= @book.reviews.count %> reviews</span>
+			<p class="book-desc"><%= @book.description %></p>
+
+		</div>
+	</div>
+
 
 </div>
 
