@@ -2,6 +2,7 @@ class ReviewsController < ApplicationController
 	
 	before_action :set_book, only: [:create, :update]
 	before_action :set_review, only: [:edit, :update, :destroy]
+	before_action :authenaticate_user!, only: [:new, :edit]
 
 	def new
 	  @review = Review.new	
