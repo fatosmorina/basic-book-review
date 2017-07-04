@@ -17,6 +17,15 @@ class ReviewsController < ApplicationController
 	  end
 	end
 
+	def update
+		@review = Review.find(params[:id])
+		if @review.update(review_parameters)
+			redirect_to book_path(@book)
+		else
+			render 'edit'
+		end
+	end
+
 	def edit
 		@review = Review.find(params[:id])
 	end
