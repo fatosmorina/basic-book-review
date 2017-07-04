@@ -2,7 +2,7 @@ class BooksController < ApplicationController
 
 	before_action :find_book, only: [:show, :edit, :update, :destroy]
 	before_action :set_categories, only: [:edit, :new]
-	before_action :authenaticate_user!, only: [:new, :edit]
+	before_action :authenticate_user!, only: [:new, :edit]
 
 	def show
 		if @book.reviews.blank?
