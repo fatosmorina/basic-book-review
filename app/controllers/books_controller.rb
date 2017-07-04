@@ -4,6 +4,11 @@ class BooksController < ApplicationController
 	before_action :set_categories, only: [:edit, :new]
 
 	def show
+		if @book.reviews.blank?
+			@average_review = 0
+		else
+			@average_review = @book.reviews.average(:rating).round(2)
+		end
 	end
 
 	def index
