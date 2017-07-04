@@ -1,5 +1,8 @@
 class ReviewsController < ApplicationController
 	
+	before_action :set_book
+	before_action :set_review
+
 	def new
 	  @review = Review.new	
 	end
@@ -27,7 +30,6 @@ class ReviewsController < ApplicationController
 	end
 
 	def edit
-		@review = Review.find(params[:id])
 	end
 
 
@@ -37,7 +39,11 @@ class ReviewsController < ApplicationController
 	  params.require(:review).permit(:rating, :comment)		
 	end
 
-	def get_book
+	def set_book
 	  @book = Book.find(params[:book_id])	
+	end
+
+	def set_review
+		@review = Review.find(params[:id])
 	end
 end
